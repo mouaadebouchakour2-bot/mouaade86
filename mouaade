@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوشاقور معاذ | هندسة السيادة الرقمية</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;900&family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #007aff; /* أزرق تقني عصري */
+            --deep-dark: #0a0a0b;
+            --surface: #161618;
+            --accent-green: #008751;
+            --pure-white: #ffffff;
+            --text-muted: #a1a1a6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--deep-dark); 
+            color: var(--pure-white); 
+            font-family: 'Cairo', sans-serif; 
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* نافبار شفاف */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 8%;
+            background: rgba(10, 10, 11, 0.8); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .logo { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 2px; color: var(--primary-blue); }
+
+        /* قسم الترحيب الرئيسي */
+        .hero {
+            height: 90vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 10%;
+            background: radial-gradient(circle at center, #1c1c1e 0%, var(--deep-dark) 100%);
+        }
+        .flag-hero { width: 120px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 4px; }
+        
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.2;
+            background: linear-gradient(to right, #fff, var(--primary-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        /* معرض الصور المتناسق */
+        .gallery-container { padding: 100px 8%; background: var(--deep-dark); }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; font-weight: 600; }
+        .section-title span { color: var(--primary-blue); }
+
+        .image-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;
+        }
+
+        .img-card {
+            background: var(--surface); border-radius: 20px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05); transition: 0.4s ease;
+        }
+        .img-card:hover { transform: translateY(-10px); border-color: var(--primary-blue); }
+        
+        .img-card img { width: 100%; height: 300px; object-fit: cover; }
+        
+        .img-info { padding: 25px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .img-info h3 { font-family: 'Orbitron'; font-size: 1rem; color: var(--primary-blue); margin-bottom: 10px; }
+        .img-info p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* النصوص التعريفية */
+        .content-section { padding: 80px 8%; }
+        .bio-box {
+            background: var(--surface); padding: 50px; border-radius: 30px;
+            margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .long-text { font-size: 1.2rem; line-height: 2; text-align: justify; color: #d1d1d6; }
+        .highlight { color: var(--primary-blue); font-weight: 700; }
+        .dz-highlight { color: var(--accent-green); font-weight: 700; }
+
+        footer { padding: 40px; text-align: center; color: var(--text-muted); border-top: 1px solid var(--surface); font-family: 'Roboto Mono', monospace; }
+        
+        @media (max-width: 768px) {
+            .image-grid { grid-template-columns: 1fr; }
+            .bio-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MOAD.BOUSHAKOUR</div>
+        <div style="font-family: 'Roboto Mono'; font-size: 0.8rem; color: var(--text-muted);">v2.0 // 2026</div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/1024px-Flag_of_Algeria.svg.png" class="flag-hero" alt="Algeria">
+            <h1>هندسة النظم القومية <br> والسيادة الرقمية</h1>
+            <p style="color: var(--text-muted); max-width: 600px; font-size: 1.1rem;">تطوير حلول برمجية استراتيجية بأيدي جزائرية لحماية المستقبل الرقمي.</p>
+        </section>
+
+        <section class="gallery-container">
+            <h2 class="section-title">محاور <span>القوة</span></h2>
+            <div class="image-grid">
+                
+                <div class="img-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" alt="Cyber Security">
+                    <div class="img-info">
+                        <h3>DIGITAL ARCHITECTURE</h3>
+                        <p>بناء النظم العميقة وتأمين البنية التحتية المعلوماتية للدولة.</p>
+                    </div>
+                </div>
+
+                <div class="img-card">
+                    <img src="https://images.pexels.com/photos/10362394/pexels-photo-10362394.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Algeria Defense">
+                    <div class="img-info">
+                        <h3>NATIONAL DEFENSE</h3>
+                        <p>السيادة تبدأ من امتلاك القوة التكنولوجية وحماية الأسرار الوطنية.</p>
+                    </div>
+                </div>
+
+                <div class="img-card">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800" alt="Programming">
+                    <div class="img-info">
+                        <h3>ALGERIAN CODE</h3>
+                        <p>برمجيات سيادية مطورة محلياً بلغات Java و Python و C++.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="bio-box">
+                <h2 style="margin-bottom: 25px;">الكيان البرمجي</h2>
+                <p class="long-text">
+                    أنا <span class="highlight">بوشاقور معاذ</span>، مبرمج نظم متخصص في هندسة الاختراق الوقائي وبناء البنى التحتية المحصنة. مساري في عالم التكنولوجيا لا يعرف الحدود؛ حيث أقوم بتطوير خوارزميات معقدة بلغة <span class="highlight">Java</span> و <span class="highlight">Python</span> و <span class="highlight">C++</span> تهدف إلى خلق جدار ناري سيادي لا يمكن اختراقه. أنا لا أصمم مجرد مواقع، بل أبني قلاعاً رقمية تحمي البيانات من الضياع في هاوية الويب المظلم. رؤيتي البرمجية تعتمد على السيطرة المطلقة على الكود المصدري، لأن من يملك الكود يملك مصير البيانات. أكرس كل ذرة من مهاراتي لتطوير أنظمة جزائرية خالصة، تتحدى المعايير العالمية وتفرض هيبتها في الفضاء السيبراني، مؤمناً بأن القوة الحقيقية تكمن في المعرفة المشفرة والذكاء الاستباقي.
+                </p>
+            </div>
+
+            <div class="bio-box" style="border-right: 8px solid var(--accent-green);">
+                <h2 style="margin-bottom: 25px;">الجزائر والجيش الوطني</h2>
+                <p class="long-text">
+                    <span class="dz-highlight">الجزائر</span> هي الأرض المقدسة التي سُقيت بدماء المليون ونصف المليون شهيد، وهي القوة التي لا تقهر في شمال أفريقيا. نحن نستمد شجاعتنا من بطولات <span class="dz-highlight">الجيش الوطني الشعبي</span>، سليل جيش التحرير الوطني، الذي يقف كالجبل الشامخ أمام كل من يحاول المساس بأمن الوطن. في عالمنا المعاصر، انتقلت ساحات المعارك إلى الفضاء الرقمي، وهنا يأتي دورنا كجنود تقنيين. نحن نؤمن بأن السيادة الجزائرية تبدأ من "السيادة البرمجية"؛ تأمين حدودنا المعلوماتية، وحماية أسرار دولتنا، وبناء أنظمة دفاعية إلكترونية هي مهمتنا المقدسة. إننا نعمل بصمت وقوة لضمان أن تظل الجزائر قلعة رقمية منيعة، تحت حماية أبنائها المخلصين وجيشها الباسل.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>MOAD BOUSHAKOUR // 2026 // ALGERIA CYBER COMMAND</p>
+    </footer>
+
+</body>
+</html>
