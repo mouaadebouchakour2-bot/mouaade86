@@ -1,0 +1,174 @@
+from flask import Flask, render_template_string
+
+app = Flask(__name__)
+
+html_code = """
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معاذ | Ethical Hacker</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc;
+}
+
+.section {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0,255,204,0.08);
+    border-radius: 15px;
+}
+
+h2 {
+    color: #00ffcc;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #00ffcc;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    background: rgba(0,0,0,0.7);
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+
+<h1>معاذ | Ethical Hacker</h1>
+<p>خبير أمن سيبراني من الجزائر 🇩🇿</p>
+
+<div class="section">
+<h2>من أنا ؟</h2>
+<p>
+أنا معاذ، مهتم بالأمن السيبراني واختبار الاختراق الأخلاقي.
+أسعى لحماية الأنظمة واكتشاف الثغرات بطريقة قانونية وأخلاقية،
+وتمثيل الجزائر 🇩🇿 في المجال الرقمي.
+</p>
+</div>
+
+<div class="section">
+<h2>بلدي الجزائر 🇩🇿</h2>
+<p>
+أفتخر بانتمائي إلى الجزائر، أرض التاريخ والمجد،
+وأطمح للمساهمة في تطوير الأمن السيبراني في بلدي.
+</p>
+</div>
+
+<div class="section">
+<h2>موقفي الإنساني 🇵🇸</h2>
+<p>
+أدعم القضية الفلسطينية دعمًا إنسانيًا وأخلاقيًا،
+وأؤمن بالحرية والعدالة لكل الشعوب.
+</p>
+</div>
+
+<div class="section">
+<h2>تواصل معي</h2>
+<a class="btn" href="https://www.facebook.com/profile.php?id=61583656769936" target="_blank">Facebook</a>
+<a class="btn" href="https://www.instagram.com/mouaade_09_09" target="_blank">Instagram</a>
+</div>
+
+<footer>
+© 2026 معاذ | Ethical Hacker | Algeria 🇩🇿
+</footer>
+
+</div>
+
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let x = 0; x < columns; x++)
+    drops[x] = 1;
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ffcc";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+            drops[i] = 0;
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+
+window.addEventListener("resize", () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+});
+</script>
+
+</body>
+</html>
+"""
+
+@app.route("/")
+def home():
+    return render_template_string(html_code)
+
+if __name__ == "__main__":
+    app.run(debug=True)
